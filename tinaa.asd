@@ -12,53 +12,53 @@
     :components
     ((:file "package")
      (:file "class-defs"
-	    :depends-on ("package" "api"))
+      :depends-on ("package" "api"))
      (:file "api"
-	    :depends-on ("package"))
+      :depends-on ("package"))
      (:file "macros"
-	    :depends-on ("api" "package"))
+      :depends-on ("api" "package"))
      (:file "utilities"
-	    :depends-on ("macros"))
+      :depends-on ("macros"))
      (:file "definitions"
-	    :depends-on ("package"))
+      :depends-on ("package"))
      (:file "files-and-urls"
-	    :depends-on ("package" "definitions"))
+      :depends-on ("package" "definitions"))
      (:file "tinaa"
-	    :depends-on ("api" "class-defs" "definitions"))
+      :depends-on ("api" "class-defs" "definitions"))
      (:file "generate-output"
-	    :depends-on ("tinaa" "macros"))
+      :depends-on ("tinaa" "macros"))
 
      (:file "doc-package"
-	    :depends-on ("tinaa" "macros"))
+      :depends-on ("tinaa" "macros"))
      (:file "doc-class"
-	    :depends-on ("tinaa" "macros"))
+      :depends-on ("tinaa" "macros"))
      (:file "doc-variable"
-	    :depends-on ("tinaa" "macros"))
+      :depends-on ("tinaa" "macros"))
      (:file "doc-function"
-	    :depends-on ("tinaa" "macros"))
+      :depends-on ("tinaa" "macros"))
      (:file "doc-symbol"
-	    :depends-on ("tinaa" "macros"))
+      :depends-on ("tinaa" "macros"))
      (:file "doc-asdf-system"
-	    :depends-on ("tinaa""macros"))
+      :depends-on ("tinaa""macros"))
 
      (:file "build-indexes"
-	    :depends-on ("tinaa" "doc-symbol" "macros"))
+      :depends-on ("tinaa" "doc-symbol" "macros"))
      (:file "permuted-index"
-            :depends-on ("build-indexes"))
+      :depends-on ("build-indexes"))
      (:file "build-contents"
-            :depends-on ("package"))
+      :depends-on ("package"))
      (:file "graph-parts"
-            :depends-on ("package" "definitions"))
+      :depends-on ("package" "definitions"))
      (:file "templates"
-	    :depends-on ("tinaa"))
+      :depends-on ("tinaa"))
      (:file "epilogue"
-	    :depends-on ("tinaa"))
+      :depends-on ("tinaa"))
 
      (:static-file "notes.text")
      (:static-file "tinaa.css")))
    (:module "website"
-	    :components ((:module "source"
-				  :components ((:static-file "index.md"))))))
+    :components ((:module "source"
+                  :components ((:static-file "index.md"))))))
   :depends-on ((:version "defsystem-compatibility" "0.1.2")
                (:version "metatilities" "0.6.6")
                "lml2"
@@ -66,6 +66,7 @@
                "cl-graph"
                "anaphora"
                "dynamic-classes"
+               "serapeum"
                (:version "cl-containers" "0.11.5")))
 
 (load-system "asdf-system-connections")

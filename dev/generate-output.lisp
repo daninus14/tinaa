@@ -60,7 +60,8 @@ own system-kind, it will need to be a class defined in the Tinaa package."
    (setf (css-file writer)
 	 (or 
 	  *css-file*
-	  (pathname-for-system-file 'tinaa "tinaa.css")
+	  ;; (pathname-for-system-file 'tinaa "tinaa.css")
+          (serapeum:path-join (asdf:system-source-directory "tinaa") "dev/tinaa.css")
 	  (error "can't find CSS file")))))
 
 (defmethod build-documentation :around

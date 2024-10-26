@@ -1,0 +1,8 @@
+("quicklisp" .
+ (:class qlot/source/dist:source-dist
+  :initargs (:distribution "https://beta.quicklisp.org/dist/quicklisp.txt" :%version :latest)
+  :version "2024-10-12"))
+("asdf-system-connections" .
+ (:class qlot/source/github:source-github
+  :initargs (:repos "lisp-maintainers/asdf-system-connections" :ref nil :branch nil :tag nil)
+  :version "github-9f085240febccccff99d9d3bb687fcaafffd3f5e"))

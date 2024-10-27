@@ -13,3 +13,4 @@ lift-local.config
 *.dribble
 *.fasl
 .qlot/
+*~

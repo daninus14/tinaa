@@ -33,7 +33,10 @@
 
 (defmethod initialize-instance :after ((object doclisp-asdf-system) &key)
   (let ((system (dsc:find-system (name object))))
-    (assert (system-loaded-p (name object)))
+    ;; (assert (system-loaded-p (name object)))
+    (assert (member (string-downcase (format NIL "~A" (name object)))
+                    (asdf:already-loaded-systems)
+                    :test #'equalp))
     (setf (slot-value object'instance) system)
     (setf (values (slot-value object 'author-name) 
                   (slot-value object 'author-mail))
